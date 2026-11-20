@@ -4,6 +4,13 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: gds-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   gds:
     runs-on: ubuntu-24.04
@@ -40,7 +47,10 @@ jobs:
   viewer:
     needs: gds
     runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
     permissions:
+      contents: read
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
     steps:

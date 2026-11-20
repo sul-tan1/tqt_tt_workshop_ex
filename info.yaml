@@ -1,8 +1,8 @@
 # Tiny Tapeout project information
 project:
   title:        "4 bit ALU example"      # Project title
-  author:       "My name"      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  author:       "Emron Arsala"      # Your name
+  discord:      "shotf"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "simple 4 bit ALU to fit onto a 1x1 tile"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)

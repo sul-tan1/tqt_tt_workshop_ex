@@ -62,7 +62,8 @@ async def test_alu_exhaustive(dut):
             for b in range(16):
                 dut.ui_in.value = a | (b << 4)
                 dut.uio_in.value = op
-                await Timer(10, units="ns")
+                # Allow the gate-level ripple-carry path to settle with UNIT_DELAY.
+                await Timer(100, unit="ns")
 
                 out = int(dut.uo_out.value)
                 got = (
@@ -73,6 +74,8 @@ async def test_alu_exhaustive(dut):
                     (out >> 7) & 1,
                 )
                 exp = model(a, b, op)
+                assert int(dut.uio_oe.value) == 0, "All bidirectional pins must stay inputs"
+                assert int(dut.uio_out.value) == 0, "Unused output drivers must stay low"
                 if got != exp:
                     errors += 1
                     dut._log.error(

@@ -11,3 +11,8 @@ test/sim_build
 test/__pycache__/
 test/results.xml
 test/gate_level_netlist.v
+
+# Local Windows toolchain and generated reports (never upload the suite to GitHub).
+.tools/
+build/
+__pycache__/

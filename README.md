@@ -2,6 +2,8 @@
 
 # Tiny Tapeout Verilog Project Template
 
+- **Windows tools, tests, waveforms, GitHub jobs, and the 3D layout viewer:** [setup guide](docs/windows-and-github.md).
+
 - [Read the documentation for project](docs/info.md)
 
 ## What is Tiny Tapeout?

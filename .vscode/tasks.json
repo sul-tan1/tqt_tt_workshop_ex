@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Tiny Tapeout: check tools",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\scripts\\tt.ps1", "doctor"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Tiny Tapeout: test ALU",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\scripts\\tt.ps1", "test"],
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Tiny Tapeout: synthesize",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\scripts\\tt.ps1", "synth"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Tiny Tapeout: open waveforms",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\scripts\\tt.ps1", "wave"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Tiny Tapeout: open 3D layout",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoLogo", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\scripts\\tt.ps1", "viewer"],
+      "problemMatcher": []
+    }
+  ]
+}
